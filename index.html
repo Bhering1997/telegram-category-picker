@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Tipo de despesa</title>
+  <link rel="stylesheet" href="picker.css">
+  <script defer src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script defer src="picker.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Tipo de despesa</h1>
+    <p id="message" role="status">Abra a seleção pelo botão do bot.</p>
+    <form id="selection" hidden>
+      <details open>
+        <summary><span id="selected">Escolher categoria</span></summary>
+        <div class="list-panel">
+          <label for="search">Buscar categoria</label>
+          <input id="search" type="search" placeholder="Ex.: lavanderia" autocomplete="off">
+          <p id="matches" role="status"></p>
+          <fieldset id="choices" aria-label="Categorias"></fieldset>
+        </div>
+      </details>
+      <button id="confirm" type="submit" disabled>Confirmar categoria</button>
+      <p id="error" role="alert" hidden></p>
+    </form>
+  </main>
+</body>
+</html>

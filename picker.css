@@ -1,0 +1,93 @@
+:root {
+  color-scheme: light dark;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--tg-theme-secondary-bg-color, light-dark(#eef3f7, #171f28));
+  color: var(--tg-theme-text-color, light-dark(#162535, #f1f5f8));
+  --panel: var(--tg-theme-bg-color, light-dark(#fff, #222d39));
+  --line: light-dark(#c8d5df, #526679);
+  --accent: var(--tg-theme-button-color, light-dark(#1768a6, #7ac3ff));
+  --button-text: var(--tg-theme-button-text-color, light-dark(#fff, #102234));
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body { margin: 0; }
+main { width: min(100%, 36rem); margin-inline: auto; padding: 1.25rem 1rem; }
+h1 { margin: 0 0 1rem; font-size: 1.5rem; line-height: 1.2; }
+p { margin: .65rem 0; }
+
+details {
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+}
+
+summary {
+  cursor: pointer;
+  padding: .85rem 1rem;
+  font-weight: 650;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.list-panel { padding: .85rem 1rem 1rem; border-top: 1px solid var(--line); }
+label[for="search"] { display: block; margin-bottom: .35rem; font-weight: 600; }
+
+input[type="search"] {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: .5rem .7rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  background: var(--panel);
+  color: inherit;
+  font: inherit;
+}
+
+#matches { font-size: .875rem; }
+fieldset {
+  min-inline-size: 0;
+  max-height: 18rem;
+  max-height: min(40dvh, 18rem);
+  overflow: auto;
+  margin: 0;
+  padding: 0 .15rem;
+  border: 0;
+}
+
+.choice {
+  display: grid;
+  grid-template-columns: 1.15rem minmax(0, 1fr);
+  gap: .65rem;
+  align-items: start;
+  min-height: 2.75rem;
+  padding: .65rem .35rem;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  font-size: .9375rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.choice:last-child { border-bottom: 0; }
+.choice input { margin: .2rem 0 0; accent-color: var(--accent); }
+.choice:has(input:checked) { font-weight: 650; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+summary:focus-visible { outline-offset: -3px; }
+
+button {
+  width: 100%;
+  min-height: 2.85rem;
+  margin-top: .8rem;
+  padding: .65rem;
+  border: 0;
+  border-radius: .6rem;
+  background: var(--accent);
+  color: var(--button-text);
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+button:disabled { opacity: .55; cursor: default; }
